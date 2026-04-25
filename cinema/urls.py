@@ -5,5 +5,4 @@ from cinema.views import MoviesList, MovieDetail
 urlpatterns = [
     path("movies/", MoviesList.as_view(), name="movies-list"),
     path("movies/<int:pk>/", MovieDetail.as_view(), name="movie-detail"),
-    path("movies/<int:pk>/", MovieDetail.as_view(), name="movie-delete"),
 ]
