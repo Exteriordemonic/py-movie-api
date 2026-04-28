@@ -28,7 +28,7 @@ class MovieDetail(APIView):
 
     def put(self, request, pk):
         movie = get_object_or_404(Movie, id=pk)
-        serializer = MovieSerializer(movie, data=request.data)
+        serializer = MovieSerializer(movie, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
